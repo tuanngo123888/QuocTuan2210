@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <!-- Basic Info -->
+    <fieldset>
+      <legend>Basic Info</legend>
+
+      <label>Employee ID</label>
+      <span>9</span><br>
+
+
+      <label>Last Name</label>
+      <span>Dodsworth</span> <br>
+
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" value="Anne"><br>
+
+      <label>Gender</label>
+      <div class="radio-group">
+        <input type="radio" name="gender" value="Male"> Male<br>
+        <input type="radio" name="gender" value="Female"> Female<br>
+        <input type="radio" name="gender" value="XXX"> XXX<br>
+        <input type="radio" name="gender" value="ZZZ" checked> ZZZ<br>
+      </div><br>
+
+      <label for="title">Title</label>
+      <input type="text" id="title" value="Sales Representative"><br>
+
+      <label for="suffix">Suffix</label>
+      <input type="text" id="suffix" value="Ms."><br>
+
+      <label for="birthDate">BirthDate</label>
+      <input type="text" id="birthDate" value="1969-07-02 00:00:00"><br>
+
+      <label for="hireDate">HireDate</label>
+      <input type="text" id="hireDate" value="1994-11-15 00:00:00"><br>
+
+      <label for="ssn">SSN #(if applycation)</label>
+      <input type="text" id="ssn"><br>
+
+      <label for="reportsTo">Reports To</label>
+      <select id="reportsTo">
+        <option>Buchanan</option>
+      </select><br>
+    </fieldset>
+
+    <!-- Contact Info -->
+    <fieldset>
+      <legend>Contact Info</legend>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="name@example.com"><br>
+
+      <label for="address">Address</label>
+      <input type="text" id="address" value="7 Houndstooth Rd."><br>
+
+      <label for="city">City</label>
+      <input type="text" id="city" value="London"><br>
+
+      <label for="region">Region</label>
+      <input type="text" id="region"><br>
+
+      <label for="postal">Postal Code</label>
+      <input type="text" id="postal" value="WG2 7LT"><br>
+
+      <label for="country">Country</label>
+      <select id="country">
+        <option>Russian Federation</option>
+      </select><br>
+
+      <label for="phone">US Home Phone</label>
+      <input type="text" id="phone" value="(234)234-2342"><br>
+
+      <label for="photo">Photo</label>
+      <input type="text" id="photo" value="EmpID9.bmp"><br>
+    </fieldset>
+
+    <fieldset>
+  <legend>Optional Info</legend>
+
+  <!-- Optional infor -->
+  <label for="notes">Notes</label>
+  <textarea name="notes" id="editor" rows="10" cols="80">
+Anne has a BA degree in English from St. Lawrence College.
+She is fluent in French and German.ZZZ
+</textarea>
+
+  <br>
+
+  <label>Preferred Shift</label>
+  <input type="checkbox" id="Preferred Shift" name="Regular " value="Regular"><br>
+  <input type="checkbox" id="Preferred Shift" name="Gravy Yard" value="Gravy Yard" checked>
+ 
+  <br>
+  <label for="active">Active?</label>
+  <input type="checkbox" id="active" name="active" checked>
+  <br><br>
+
+  <label>Are you human?</label><br>
+  <div style="font-family: monospace; font-size: 24px; letter-spacing: 5px;">TIDAWO</div>
+  <a href="#">Click to change</a><br><br>
+  <input type="text" name="captcha" >
+  <br><br>
+</fieldset>
+
+  <!-- Link Font Awesome (icon) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Nút điều hướng -->
+<div style="display: flex; justify-content: space-between; align-items: center;">
+ >
+  <div>
+    <button><i class="fas fa-angle-left"></i></button>
+    <button><i class="fas fa-angle-right"></i></button>
+  </div>
+
+  <!-- Submit/Cancel -->
+  <div>
+    <button type="submit"><i class="fas fa-save"></i> Submit</button>
+    <button type="reset"><i class="fas fa-times"></i> Cancel</button>
+  </div>
+</div>
+
+
+
+        
+
+    </form>
+    <script src="https://cdn.ckeditor.com/4.21.0/standard/ckeditor.js"></script>
+<script>
+  CKEDITOR.replace('editor');
+</script>
+
+</body>
+</html>
