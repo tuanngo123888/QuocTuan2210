@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+</head>
+<body>
+    <form action="">
+<label for="MSV">Mã sinh viên:</label>
+<br />
+<input type="email" id="MSV" name="MSV" required />
+<br />
+<label for="fullname" >Họ và tên:</label>
+<br />
+<input type="text" id="fullname" name="fullname" required />
+<br />
+<label for="email">Email:</label>
+<br />
+<input type="email" id="email" name="email" />
+<br />
+<label for="date">Ngày sinh:</label>
+<br />
+<input type="date" id="date" name="date" />
+<br />
+<label for="gender">Giới tính:</label>
+<br />
+<label for="nam">Nam</label>
+<input type="radio" id="nam" name="gender" value="nam" />
+<label for="nu">Nữ</label>
+<input type="radio" id="nu" name="gender" value="nu" />
+<br />
+<label for="Ghichu">Ghi chú:</label>
+<br />
+<input type="textarea" id="Ghichu" name="Ghichu">
+<br />
+<button type="submit">Thêm sinh viên</button>
+</form>
+<table>
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Mã SV</th>
+                <th>Họ tên</th>
+                <th>Email</th>
+                <th>Giới tính</th>
+                <th>Ngày sinh</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>001</td>
+                <td>Ngô Quốc Tuấn</td>
+                <td>nguyenvana@gmail.com</td>
+                <td>Nam</td>
+                <td>22/10/2003</td>
+                <td>
+                    <a href="#">Sửa</a> | <a href="#">Xoá</a>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>002</td>
+                <td>Trần Thị Thơm</td>
+                <td>tranthithom@gmail.com</td>
+                <td>Nữ</td>
+                <td>02/02/2000</td>
+                <td>
+                    <a href="#">Sửa</a> | <a href="#">Xoá</a>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>003</td>
+                <td>Phạm Văn An</td>
+                <td>phamvana@gmail.com</td>
+                <td>Nam</td>
+                <td>03/03/2000</td>
+                <td>
+                    <a href="#">Sửa</a> | <a href="#">Xoá</a>
+                    </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
