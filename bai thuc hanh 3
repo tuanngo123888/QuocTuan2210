@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD Sinh Viên</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <h2  class="form-title">Thêm sinh viên</h2>
+  <form class="student-form">
+    <label for="MSV">Mã sinh viên:</label>
+    <input type="text" id="MSV" name="MSV" required>
+
+    <label for="fullname">Họ và tên:</label>
+    <input type="text" id="fullname" name="fullname" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+
+    <label for="date">Ngày sinh:</label>
+    <input type="date" id="date" name="date">
+
+    <label>Giới tính:</label>
+    <div class="radio-group">
+      <label><input type="radio" name="gender" value="Nam"> Nam</label>
+      <label><input type="radio" name="gender" value="Nữ"> Nữ</label>
+    </div>
+
+    <label for="Ghichu">Ghi chú:</label>
+    <textarea id="Ghichu" name="Ghichu"></textarea>
+
+    <button type="submit" class="btnFORM">Thêm sinh viên</button>
+  </form>
+
+  <table class="student-table">
+    <thead>
+      <tr>
+        <th>STT</th>
+        <th>Mã SV</th>
+        <th>Họ tên</th>
+        <th>Email</th>
+        <th style="color: aquamarine;">Giới tính</th>
+        <th>Ngày sinh</th>
+        <th>Hành động</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>001</td>
+        <td>Ngô Quốc Tuấn</td>
+        <td>nguyenvana@gmail.com</td>
+        <td>Nam</td>
+        <td>22/10/2003</td>
+        <td><a href="#">Sửa</a> | <a href="#">Xoá</a></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>002</td>
+        <td>Trần Thị Thơm</td>
+        <td>tranthithom@gmail.com</td>
+        <td>Nữ</td>
+        <td>02/02/2000</td>
+        <td><a href="#">Sửa</a> | <a href="#">Xoá</a></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  padding: 30px;
+}
+    
+h2.form-title {
+  background-color: #6b4caf;
+  color: white;
+  padding: 12px;
+  border-radius: 6px;
+  width: fit-content;
+  margin-bottom: 20px;
+}
+
+.student-form {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 400px;
+  margin-bottom: 30px; 
+}
+
+.student-form label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.student-form input,
+.student-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.student-form textarea {
+  resize: vertical;
+  height: 60px;
+}
+
+.radio-group {
+  margin-top: 4px;
+  display: flex;
+  gap: 15px;
+}
+
+
+ 
+.btnFORM{
+    margin-top: 100px;
+  padding: 10px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.student-form button:hover {
+  background-color: #4c45a0;
+}
+
+/* Bảng danh sách sinh viên */
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+.student-table th, 
+.student-table td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: left;
+}
+
+.student-table thead th {
+  background-color: #2196F3;
+  color: white;
+}
+
+.student-table tbody tr:hover {
+  background-color: #ffffff;
+  text-decoration: underline;
+}
+
+.student-table a {
+  color: #2196F3;
+  text-decoration: none;
+}
+
+.student-table a:hover {
+  text-decoration: underline;
+}
+
+
+  
