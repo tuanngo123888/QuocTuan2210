@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản Lý Sinh Viên</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="../bootstrap-5.3.7-dist/css/bootstrap.min.css"
+    />
+    <script src="../bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid p-0">
+      <!-- Header Navbar -->
+      <header class="w-100">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Quản Lý Sinh Viên</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >Trang Chủ</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Danh Sách Sinh Viên</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Quản Lý
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Thêm Sinh Viên</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Chỉnh Sửa Thông Tin</a>
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Báo Cáo Thống Kê</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Liên Hệ</a>
+                </li>
+              </ul>
+              <form class="d-flex" role="search">
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Tìm kiếm sinh viên..."
+                  aria-label="Search"
+                />
+                <button class="btn btn-outline-success" type="submit">
+                  Tìm Kiếm
+                </button>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <!-- Main Content -->
+      <main class="container-fluid">
+        <div class="row g-3">
+          <!-- Form Section -->
+          <div class="col-12 col-lg-6" id="form-container">
+            <form id="add-student-form">
+              <div class="form-group">
+                <label for="maSV">Mã sinh viên:</label>
+                <input type="text" id="maSV" name="maSV" required />
+              </div>
+              <div class="form-group">
+                <label for="hoTen">Họ tên:</label>
+                <input type="text" id="hoTen" name="hoTen" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div class="form-group gender-group">
+                <label for="gioiTinh">Giới tính:</label>
+                <div class="radio-group">
+                  <div class="radio-item">
+                    <input type="radio" id="nam" name="gioiTinh" value="Nam" />
+                    <label for="nam">Nam</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="nu" name="gioiTinh" value="Nữ" />
+                    <label for="nu">Nữ</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="ngaySinh">Ngày sinh:</label>
+                <input type="date" id="ngaySinh" name="ngaySinh" required />
+              </div>
+              <div class="form-group">
+                <label for="ghiChu">Ghi chú:</label>
+                <textarea name="ghiChu" id="ghiChu"></textarea>
+              </div>
+              <div class="form-group text-center">
+                <button class="btn btn-primary" id="btn-them" type="submit">
+                  Thêm sinh viên
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Table Section -->
+          <div class="col-12 col-lg-6">
+            <div class="table-container">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>STT</th>
+                      <th>Mã SV</th>
+                      <th>Họ Và Tên</th>
+                      <th>Email</th>
+                      <th>Giới tính</th>
+                      <th>Ngày sinh</th>
+                      <th>Hành động</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>101</td>
+                      <td>Nguyễn Văn A</td>
+                      <td>nguyenvana@gmail.com</td>
+                      <td>Nam</td>
+                      <td>1990-01-01</td>
+                      <td>
+                        <a href="javascript:void(0)" class="btn-edit">Sửa</a>
+                        <a href="javascript:void(0)" class="btn-delete">Xóa</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>102</td>
+                      <td>Nguyễn Văn B</td>
+                      <td>nguyenvanb@gmail.com</td>
+                      <td>Nữ</td>
+                      <td>1990-01-01</td>
+                      <td>
+                        <a href="javascript:void(0)" class="btn-edit">Sửa</a>
+                        <a href="javascript:void(0)" class="btn-delete">Xóa</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>103</td>
+                      <td>Nguyễn Văn CCC</td>
+                      <td>nguyenvanc@gmail.com</td>
+                      <td>Nam</td>
+                      <td>1990-01-01</td>
+                      <td>
+                        <a href="javascript:void(0)" class="btn-edit">Sửa</a>
+                        <a href="javascript:void(0)" class="btn-delete">Xóa</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>104</td>
+                      <td>Nguyễn Văn D</td>
+                      <td>nguyenvand@gmail.com</td>
+                      <td>Nữ</td>
+                      <td>1990-01-01</td>
+                      <td>
+                        <a href="javascript:void(0)" class="btn-edit">Sửa</a>
+                        <a href="javascript:void(0)" class="btn-delete">Xóa</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>105</td>
+                      <td>Nguyễn Văn E</td>
+                      <td>nguyenvane@gmail.com</td>
+                      <td>Nam</td>
+                      <td>1990-01-01</td>
+                      <td>
+                        <a href="javascript:void(0)" class="btn-edit">Sửa</a>
+                        <a href="javascript:void(0)" class="btn-delete">Xóa</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
