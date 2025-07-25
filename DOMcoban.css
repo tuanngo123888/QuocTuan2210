@@ -1,0 +1,416 @@
+/* ===== GLOBAL STYLES ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* ===== HEADER & NAVBAR ===== */
+.navbar {
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: #2c3e50 !important;
+  font-size: 1.2rem;
+}
+
+/* ===== MAIN CONTAINER ===== */
+main.container-fluid {
+  padding: 15px;
+  min-height: calc(100vh - 80px);
+}
+
+.row.g-3 {
+  display: flex;
+  align-items: stretch; /* Làm cho các cột có chiều cao bằng nhau */
+  min-height: calc(100vh - 120px); /* Chiều cao toàn màn hình trừ header và padding */
+}
+
+.col-12.col-lg-6 {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== FORM STYLES ===== */
+#form-container {
+  background-color: white;
+  border-radius: 10px;
+  padding: 25px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Chiếm toàn bộ chiều cao có sẵn */
+  margin-bottom: 0;
+}
+
+#add-student-form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between; /* Phân bổ đều các phần tử */
+  gap: 15px;
+}
+
+
+
+.form-group {
+  margin-bottom: 18px;
+  width: 100%;
+}
+
+.form-group label {
+  display: block;
+  width: 100%;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #34495e;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px; /* Quan trọng cho iOS để tránh zoom */
+  transition: all 0.3s ease;
+  background-color: #fafafa;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+  font-family: inherit;
+}
+
+/* Radio buttons styling */
+.gender-group {
+  margin-bottom: 15px;
+}
+
+.gender-group > label {
+  margin-bottom: 10px;
+}
+
+.radio-group {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.radio-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.radio-item input[type="radio"] {
+  width: auto;
+  margin: 0;
+  transform: scale(1.2);
+}
+
+.radio-item label {
+  margin: 0;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+/* Button styling */
+#btnThem {
+  background-color: #3498db; /* Màu xanh cho primary */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+}
+
+#btnThem:hover {
+  background-color: #2980b9; /* Xanh đậm hơn khi hover */
+}
+
+#btn-confirm {
+  background-color: #3498db; /* Màu xanh cho primary */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+}
+
+#btn-confirm:hover {
+  background-color: #2980b9; /* Xanh đậm hơn khi hover */
+}
+
+/* Table Container Styles */
+.table-container {
+  background-color: white;
+  border-radius: 10px;
+  padding: 25px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Chiếm toàn bộ chiều cao có sẵn */
+}
+
+/* Table chiếm toàn màn hình khi form bị ẩn */
+.col-12.col-lg-6:last-child {
+  flex: 1 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.table-responsive {
+  flex: 1; /* Chiếm toàn bộ không gian còn lại */
+}
+
+table {
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+}
+
+.table th,
+.table td,
+th,
+td {
+  border: 1px solid #ddd; /* Thêm border cho các cell */
+  padding: 8px 12px; /* Thêm padding cho đẹp */
+  text-align: left; /* Căn trái */
+}
+
+/* Force header styling với highest specificity */
+.table-responsive .table thead th,
+.table-container .table thead th,
+.table thead th,
+.table th,
+table thead th,
+th {
+  background-color: #72bdf2 !important; /* Màu nền xanh cho header */
+  color: white !important; /* Chữ trắng */
+  font-weight: bold !important; /* Chữ đậm cho header */
+  border-color: #72bdf2 !important; /* Border cùng màu */
+}
+.table tbody tr,
+tr {
+  transition: all 0.3s ease;
+}
+
+.table tbody tr:nth-child(even),
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.table tbody tr:hover,
+.table tbody tr:hover td,
+tr:hover,
+tr:hover td {
+  background-color: #6cbced !important;
+  color: white !important;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* CSS cho các button trong table */
+.table a,
+table a {
+  text-decoration: none; /* Bỏ gạch chân */
+  padding: 5px 10px; /* Padding trong button */
+  border-radius: 3px; /* Bo góc */
+  font-size: 12px; /* Cỡ chữ nhỏ */
+  font-weight: bold; /* Chữ đậm */
+  margin: 0 2px; /* Khoảng cách giữa các button */
+  transition: all 0.3s ease; /* Hiệu ứng chuyển đổi */
+  display: inline-block; /* Inline-block để padding hoạt động */
+}
+
+/* Button Sửa - màu xanh dương */
+.table a:first-child,
+table a:first-child {
+  background-color: #2196f3; /* Màu nền xanh dương */
+  color: white; /* Chữ trắng */
+}
+
+.table a:first-child:hover,
+table a:first-child:hover {
+  background-color: #1976d2; /* Xanh đậm hơn khi hover */
+  transform: scale(1.05); /* Phóng to nhẹ */
+}
+
+/* Button Xóa - màu đỏ */
+.table a:last-child,
+table a:last-child {
+  background-color: #f44336; /* Màu nền đỏ */
+  color: white; /* Chữ trắng */
+}
+
+.table a:last-child:hover,
+table a:last-child:hover {
+  background-color: #d32f2f; /* Đỏ đậm hơn khi hover */
+  transform: scale(1.05); /* Phóng to nhẹ */
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* iPhone 14 Pro Max: 430px width */
+@media (max-width: 430px) {
+  main.container-fluid {
+    padding: 10px;
+  }
+  
+  #form-container,
+  .table-container {
+    padding: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .navbar-brand {
+    font-size: 1.1rem;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 14px 16px; /* Tăng padding cho dễ touch */
+    font-size: 16px; /* Giữ size để tránh zoom trên iOS */
+  }
+  
+  #btnThem,
+  #btn-confirm {
+    padding: 14px 20px;
+    font-size: 16px;
+  }
+  
+  .table {
+    font-size: 12px;
+  }
+  
+  .table th,
+  .table td {
+    padding: 8px 4px;
+  }
+  
+  .btn-edit,
+  .btn-delete {
+    padding: 4px 8px;
+    font-size: 10px;
+    margin: 1px;
+  }
+  
+  /* Stack form trên table trên mobile */
+  .row.g-3 > div {
+    margin-bottom: 15px;
+  }
+}
+
+/* Tablets và màn hình nhỏ */
+@media (max-width: 768px) {
+  .radio-group {
+    gap: 15px;
+  }
+  
+  /* Đảm bảo table responsive */
+  .table-responsive {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .table {
+    min-width: 600px; /* Minimum width để table không bị nén quá */
+  }
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+  main.container-fluid {
+    padding: 30px;
+  }
+  
+  .row.g-3 {
+    align-items: stretch !important;
+    min-height: calc(100vh - 120px); /* Chiều cao toàn màn hình trừ header */
+  }
+  
+  .col-12.col-lg-6 {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  
+  /* Table container chiếm toàn màn hình khi form bị ẩn */
+  .col-12.col-lg-6:last-child {
+    flex: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  #form-container,
+  .table-container {
+    height: 100% !important;
+    flex-direction: column !important;
+    flex: 1 !important;
+  }
+  
+  #add-student-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .table-responsive {
+    flex: 1;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+  #form-container,
+  .table-container {
+    margin-bottom: 20px;
+  }
+}
+
+/* Remove Modal Overlay Styles since we don't need them anymore */
+.modal-overlay,
+.modal-close {
+  display: none;
+}
+
+/* ===== UTILITY CLASSES ===== */
+.w-100 {
+  width: 100% !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+th{
+  background-color: #72bdf2;
+  color: white;
+  font-weight: bold;
+}
