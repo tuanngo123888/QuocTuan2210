@@ -1,0 +1,56 @@
+body {
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+}
+
+header.navbar {
+    background-color: #343a40; 
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+}
+
+header.navbar .navbar-brand {
+    font-size: 1.1rem; 
+}
+
+header.navbar .nav-link {
+    font-size: 0.9rem; 
+}
+
+footer {
+    background-color: #002e60; 
+}
+
+#selectAll {
+    display: block;
+    margin: 0 auto;
+}
+
+.action-buttons .btn {
+    margin-right: 5px;
+    border: none; 
+}
+
+.btn-action-view {
+    background-color: #0d6efd; 
+    color: white;
+}
+
+.btn-action-edit {
+    background-color: #ffc107; 
+    color: white;
+}
+
+.btn-action-delete {
+    background-color: #dc3545; 
+    color: white;
+}
+
+html, body {
+    height: 100%;
+}
+
+main {
+    flex-grow: 1;
+}
