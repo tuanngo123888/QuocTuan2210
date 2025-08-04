@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quản lý giao dịch</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    .action-btns .btn { margin: 0 2px; }
+    footer { background-color: #001f72; color: white; }
+    .form-text.text-danger { font-size: 0.9em; }
+  </style>
+</head>
+<body class="bg-light">
+
+<nav class="navbar navbar-dark bg-dark px-4">
+  <a class="navbar-brand" href="#">Trường Đại học Thủy lợi</a>
+  <div class="d-flex align-items-center">
+    <a href="#" class="nav-link text-white me-3">Trang chủ</a>
+    <a href="#" class="nav-link text-white me-3">Quản lý cửa hàng</a>
+    <input class="form-control mx-2" type="search" placeholder="Nhập nội dung tìm kiếm">
+    <button class="btn btn-outline-light btn-sm ms-2" style="color: green; border-color: green;">TÌM KIẾM</button>
+  </div>
+</nav>
+
+<!-- thêm và xuất -->
+<div class="container d-flex justify-content-between align-items-center flex-wrap my-4">
+  <div class="d-flex gap-2">
+    <button class="btn btn-primary rounded-0" data-bs-toggle="modal" data-bs-target="#addTransactionModal">
+      <i class="bi bi-plus-circle"></i> THÊM
+    </button>
+    <button class="btn btn-light rounded-0 border">
+      <i class="bi bi-upload"></i> XUẤT RA FILE <span class="ms-1">›</span>
+    </button>
+  </div>
+  <div class="input-group mx-auto" style="max-width: 400px;">
+    <span class="input-group-text bg-light">›</span>
+    <input type="text" class="form-control" placeholder="Tìm kiếm theo tên">
+    <span class="input-group-text bg-light"><i class="bi bi-search"></i></span>
+  </div>
+  <div class="d-flex align-items-center">
+    <div class="text-end me-2"><div class="me-2">kết quả</div></div>
+    <div class="input-group" style="width: 90px;">
+      <input type="text" class="form-control text-center" value="20" readonly>
+      <span class="input-group-text bg-light">▼</span>
+    </div>
+  </div>
+</div>
+
+<!-- Bảng dữ liệu -->
+<div class="container">
+  <table class="table table-bordered table-hover text-center align-middle">
+    <thead class="table-dark">
+      <tr>
+        <th></th>
+        <th>Hành động</th>
+        <th>STT</th>
+        <th>Tên</th>
+        <th>Họ đệm</th> 
+        <th>Địa chỉ</th>
+        <th>Hoạt động</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <p class="text-end " style="margin-top: 100px">Kết quả 1 đến 4</p>
+</div>
+
+<footer class="text-center py-4">
+  <strong>TRƯỜNG ĐẠI HỌC THỦY LỢI</strong><br>
+  Địa chỉ: 175 Tây Sơn, Đống Đa, Hà Nội<br>
+  Điện thoại: (024) 38522201 - Fax: (024) 35633351<br>
+  Email: phonghcth@tlu.edu.vn
+</footer>
+
+<!-- Thêm giao dịch -->
+<div class="modal fade" id="addTransactionModal" tabindex="-1" aria-labelledby="addTransactionLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <form class="modal-content" id="transactionForm" onsubmit="return validateForm(event)">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addTransactionLabel">Thêm nhân viên</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="tenKhach" class="form-label">Tên</label>
+          <input type="text" class="form-control" id="tenKhach">
+          <div class="form-text text-danger" id="tenKhachError"></div>
+        </div>
+        <div class="mb-3">
+          <label for="hoDem" class="form-label">Họ đệm</label>
+          <input type="text" class="form-control" id="hoDem">
+          <div class="form-text text-danger" id="hoDemError"></div>
+        </div>
+        <div class="mb-3">
+          <label for="diaChi" class="form-label">Địa chỉ</label>
+          <input type="text" class="form-control" id="diaChi">
+          <div class="form-text text-danger" id="diaChiError"></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+        <button type="submit" class="btn btn-success">Thêm</button>
+      </div>
+    </form>
+  </div>
+</div>
+<script src="data.js"></script>
+<script>
+  const tableBody = document.querySelector("tbody");
+  tableBody.innerHTML = "";
+  ordersData.forEach((t) => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td><input type="checkbox"></td>
+      <td class="action-btns">
+        <button class="btn btn-sm btn-primary">👁</button>
+        <button class="btn btn-sm btn-warning">✏️</button>
+        <button class="btn btn-sm btn-danger">🗑</button>
+      </td>
+      <td>${t.id}</td>
+      <td>${t.tenKhach}</td>
+      <td>${t.hoDem}</td>
+      <td>${t.diaChi.toLocaleString("vi-VN")} ₫</td>
+      <td>
+        <div class="border border-secondary rounded px-2 py-1 d-flex justify-content-start">
+            ${t.hoatDong 
+            ? '<i class="bi bi-check-lg text-success"></i>'
+            : '<i class="bi bi-x-lg text-danger"></i>'}
+        </div>
+      </td>
+    `;
+    tableBody.appendChild(row);
+  });
+</script>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
